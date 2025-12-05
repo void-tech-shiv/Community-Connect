@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Center Event Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Community Center Event Registration</h1>
+            <p>Join us for our upcoming events! Please fill out the form below.</p>
+        </header>
+        
+        <form id="registrationForm" class="registration-form">
+            <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+                <label for="event">Select Event *</label>
+                <select id="event" name="event" required>
+                    <option value="">-- Please select an event --</option>
+                    <option value="community-dinner">Community Dinner</option>
+                    <option value="yoga-class">Yoga Class</option>
+                    <option value="art-workshop">Art Workshop</option>
+                    <option value="tech-talk">Tech Talk</option>
+                    <option value="volunteer-day">Volunteer Day</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Preferences</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="newsletter" name="preferences" value="newsletter">
+                        <label for="newsletter">Subscribe to newsletter</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="volunteer" name="preferences" value="volunteer">
+                        <label for="volunteer">Interested in volunteering</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="updates" name="preferences" value="updates">
+                        <label for="updates">Receive event updates</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="comments">Additional Comments</label>
+                <textarea id="comments" name="comments" rows="4"></textarea>
+            </div>
+            
+            <div class="form-actions">
+                <button type="reset" class="btn btn-secondary">Clear Form</button>
+                <button type="submit" class="btn btn-primary">Register Now</button>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>

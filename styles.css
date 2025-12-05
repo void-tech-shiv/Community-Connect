@@ -1,0 +1,243 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+header {
+    background: linear-gradient(120deg, #4e54c8, #8f94fb);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.registration-form {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Using :required pseudo-class to style required fields */
+.form-group input:required,
+.form-group select:required {
+    border-left: 4px solid #4e54c8;
+}
+
+/* Focus effects for inputs */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Advanced selector: Focus effect with box-shadow */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4e54c8;
+    box-shadow: 0 0 0 3px rgba(78, 84, 200, 0.2);
+}
+
+/* Hover effects for inputs */
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: #8f94fb;
+    transform: translateY(-2px);
+}
+
+/* Checkbox group styling */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.checkbox-item {
+    position: relative;
+    padding-left: 30px;
+}
+
+/* Styling checkbox labels */
+.checkbox-item label {
+    font-weight: normal;
+    cursor: pointer;
+    display: inline;
+}
+
+/* Custom checkbox styling using pseudo-elements */
+.checkbox-item input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Creating custom checkbox appearance using ::before pseudo-element */
+.checkbox-item label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+/* Checked state using ::after pseudo-element */
+.checkbox-item input[type="checkbox"]:checked + label::after {
+    content: "✓";
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.checkbox-item input[type="checkbox"]:checked + label::before {
+    background: #4e54c8;
+    border-color: #4e54c8;
+}
+
+/* Hover effect for checkboxes */
+.checkbox-item:hover label::before {
+    border-color: #8f94fb;
+}
+
+/* Button styling */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Primary button */
+.btn-primary {
+    background: linear-gradient(120deg, #4e54c8, #8f94fb);
+    color: white;
+}
+
+/* Secondary button */
+.btn-secondary {
+    background: #f0f0f0;
+    color: #555;
+}
+
+/* Hover effects for buttons */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(120deg, #3a40b5, #7a80f0);
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+}
+
+/* Focus effects for buttons */
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(78, 84, 200, 0.3);
+}
+
+/* Adding pseudo-element for decorative purposes */
+.form-group::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        margin: 10px;
+        grid-template-rows: auto 1fr;
+    }
+    
+    header {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .registration-form {
+        padding: 20px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
