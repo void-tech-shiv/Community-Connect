@@ -1,75 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community Center Event Registration</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Community Center Event Registration</h1>
-            <p>Join us for our upcoming events! Please fill out the form below.</p>
-        </header>
-        
-        <form id="registrationForm" class="registration-form">
-            <div class="form-group">
-                <label for="fullName">Full Name *</label>
-                <input type="text" id="fullName" name="fullName" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone">
-            </div>
-            
-            <div class="form-group">
-                <label for="event">Select Event *</label>
-                <select id="event" name="event" required>
-                    <option value="">-- Please select an event --</option>
-                    <option value="community-dinner">Community Dinner</option>
-                    <option value="yoga-class">Yoga Class</option>
-                    <option value="art-workshop">Art Workshop</option>
-                    <option value="tech-talk">Tech Talk</option>
-                    <option value="volunteer-day">Volunteer Day</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label>Preferences</label>
-                <div class="checkbox-group">
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="newsletter" name="preferences" value="newsletter">
-                        <label for="newsletter">Subscribe to newsletter</label>
-                    </div>
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="volunteer" name="preferences" value="volunteer">
-                        <label for="volunteer">Interested in volunteering</label>
-                    </div>
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="updates" name="preferences" value="updates">
-                        <label for="updates">Receive event updates</label>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="form-group">
-                <label for="comments">Additional Comments</label>
-                <textarea id="comments" name="comments" rows="4"></textarea>
-            </div>
-            
-            <div class="form-actions">
-                <button type="reset" class="btn btn-secondary">Clear Form</button>
-                <button type="submit" class="btn btn-primary">Register Now</button>
-            </div>
-        </form>
-    </div>
-    
-</body>
-</html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="An accessible community event registration form demonstration."><meta name="theme-color" content="#0c1323"><title>Community Connect | Event Registration Demo</title><link rel="stylesheet" href="styles.css"><script src="registration.js" defer></script></head>
+<body><a class="skip" href="#main">Skip to registration</a><header><div class="shell top"><a class="brand" href="#main">COMMUNITY<span> CONNECT</span></a><span class="tag">FORM LAB / 03</span></div></header>
+<main id="main" class="shell"><section class="intro"><p class="eyebrow">COMMUNITY EVENTS / DEMONSTRATION</p><h1>Good things happen<br><span>when we connect.</span></h1><p>Explore five sample community events and try an accessible registration experience. This is an educational prototype, not a real booking service.</p></section>
+<div class="layout"><aside class="panel events" aria-labelledby="events-title"><p class="eyebrow">THE PROGRAMME</p><h2 id="events-title">Find your event</h2><ul><li><strong>Community Dinner</strong><span>Meet neighbours and share a meal.</span></li><li><strong>Yoga Class</strong><span>Explore movement and mindfulness.</span></li><li><strong>Art Workshop</strong><span>Make something creative together.</span></li><li><strong>Tech Talk</strong><span>Learn and exchange technology ideas.</span></li><li><strong>Volunteer Day</strong><span>Give back to the community.</span></li></ul><p class="small">Events are examples; dates, venues and availability are not provided.</p></aside>
+<section class="panel" aria-labelledby="registration-title"><p class="eyebrow">REGISTRATION FORM</p><h2 id="registration-title">Reserve a demo spot</h2><p id="privacy">Use fictional information only. No details will be sent or saved. Required fields are marked with *.</p>
+<noscript><p>Enable JavaScript to preview a registration. The form is disabled without JavaScript to prevent accidental submission.</p></noscript>
+<form id="registrationForm" aria-describedby="privacy" autocomplete="off" method="post">
+<fieldset id="fields" disabled><legend>Your details</legend>
+<div class="grid"><div class="field"><label for="fullName">Full name *</label><input id="fullName" required maxlength="80" minlength="2" placeholder="Demo Participant" aria-describedby="fullName-error"><span class="error" id="fullName-error"></span></div>
+<div class="field"><label for="email">Email address *</label><input id="email" type="email" required maxlength="254" placeholder="demo@example.com" aria-describedby="email-error"><span class="error" id="email-error"></span></div>
+<div class="field"><label for="phone">Phone number (optional)</label><input id="phone" type="tel" maxlength="30" aria-describedby="phone-error"><span class="error" id="phone-error"></span></div>
+<div class="field"><label for="event">Select event *</label><select id="event" required aria-describedby="event-error"><option value="">Choose an event</option><option value="community-dinner">Community Dinner</option><option value="yoga-class">Yoga Class</option><option value="art-workshop">Art Workshop</option><option value="tech-talk">Tech Talk</option><option value="volunteer-day">Volunteer Day</option></select><span class="error" id="event-error"></span></div></div>
+<fieldset class="preferences"><legend>Optional preferences</legend><label class="check"><input type="checkbox" name="preferences" value="newsletter"> Subscribe to newsletter (demo)</label><label class="check"><input type="checkbox" name="preferences" value="volunteer"> Interested in volunteering</label><label class="check"><input type="checkbox" name="preferences" value="updates"> Receive event updates (demo)</label></fieldset>
+<div class="field"><label for="comments">Additional comments (optional)</label><textarea id="comments" rows="4" maxlength="500" aria-describedby="comment-count comments-error"></textarea><span class="small" id="comment-count">0 / 500 characters</span><span class="error" id="comments-error"></span></div>
+<div class="actions"><button type="reset" class="secondary">Clear form</button><button type="submit">Preview registration</button></div></fieldset></form>
+<section id="confirmation" class="confirmation" tabindex="-1" hidden><h3>Demo registration complete</h3><p id="summary"></p><p>No reservation, subscription or message was created.</p><button type="button" id="another">Start another demo</button></section><p id="status" role="status" class="status"></p></section></div></main>
+<footer><div class="shell bottom"><p>Community Connect · Academic web development experiment</p><a href="https://github.com/void-tech-shiv/Exprement-3">View source</a></div></footer></body></html>
